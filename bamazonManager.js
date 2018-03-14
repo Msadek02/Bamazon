@@ -111,7 +111,7 @@ function validateNumber(value) {
     if (number && positive) {
         return true;
     } else {
-        return 'Please enter a whole non-zero number.';
+        return 'Please enter positive number.';
     }
 }
 
@@ -164,6 +164,51 @@ function addInventory() {
             }
         })
     })
+}
+
+function addNewProduct() {
+
+	inquirer.prompt([
+		{
+			type: 'input',
+			name: 'product_name',
+			message: 'Please enter the new product name.',
+		},
+		{
+			type: 'input',
+			name: 'department_name',
+			message: 'Which department does the new product belong to?',
+		},
+		{
+			type: 'input',
+			name: 'price',
+			message: 'What is the price per unit?',
+			validate: validateNumber
+		},
+		{
+			type: 'input',
+			name: 'stock_quantity',
+			message: 'How many items are in stock?',
+			validate: validateInteger
+		}
+	]).then(function(input) {
+
+		console.log('Adding New Item: \n    product_name = ' + input.product_name + '\n' +  
+									   '    department_name = ' + input.department_name + '\n' +  
+									   '    price = ' + input.price + '\n' +  
+									   '    stock_quantity = ' + input.stock_quantity);
+
+		var queryStr = 'INSERT INTO products SET ?';
+
+		connection.query(queryStr, input, function (error, results, fields) {
+			if (error) throw error;
+
+			console.log('New product has been added to the inventory under Item ID ' + results.insertId + '.');
+			console.log("\n---------------------------------------------------------------------\n");
+
+			connection.end();
+		});
+	})
 }
 
 function runBamazon() {
