@@ -58,12 +58,12 @@ Below are some screenshots that show the functionality of the app.
 <a name="manager"></a>
 - Below is a demo of the `BamazonManager.js` file...
   - Running `node BamazonManager.js` will display a menu and perform the specific requests.
-    ![Manager Menu](/example_images/manageranager0.js.png)
+    ![Manager Menu](/example_images/manager0.js.png)
     - The manager can choose option `1` to view the current inventory.
-      ![Manager 1](/example_images/manageranager1.js.png)
+      ![Manager 1](/example_images/manager1.js.png)
     - The manager can choose option `2` to see low items in inventory (less than 5 in stock).
-      ![Manager 2](/example_images/manageranager2.js.png)
+      ![Manager 2](/example_images/manager2.js.png)
     - The manager can choose option `3` to re-stock existing items.
-      ![Manager 3](/example_images/manageranager3.js.png)
+      ![Manager 3](/example_images/manager3.js.png)
     - The manager can choose option `4` to add new items for sale.
-      ![Manager 4a](/example_images/manageranager4.js.png)
+      ![Manager 4a](/example_images/manager4.js.png)
