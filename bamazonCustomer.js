@@ -42,7 +42,7 @@ function promptUserPurchase() {
             validate: validateInput,
             filter: Number
         }
-    ]).then(function(input) {
+    ]).then(function(input, choices) {
 
         var item = input.item_id;
         var quantity = input.quantity;
@@ -79,8 +79,9 @@ function promptUserPurchase() {
                         console.log('Thank you for shopping with us!');
                         console.log("\n---------------------------------------------------------------------\n");
 
-                        // End the database connection
-                        connection.end();
+                            connection.end();
+                   
+                        
                     })
                 } else {
                     console.log('Sorry, there is not enough product in stock, your order can not be placed as is.');
