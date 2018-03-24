@@ -1,6 +1,5 @@
 # Bamazon
 
-# :collision: BAMazon :computer: :package:
 
 ### Overview
 A Node.js &amp; MySQL digital storefront. This is a command line Node app that mimics a beloved online retailer.
